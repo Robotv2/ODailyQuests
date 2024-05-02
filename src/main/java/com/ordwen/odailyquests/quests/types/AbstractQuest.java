@@ -22,6 +22,7 @@ public abstract class AbstractQuest extends PlayerProgressor implements IQuest {
     final Reward reward;
     final List<String> requiredWorlds;
     final boolean isUsingPlaceholders;
+    final String resetService;
 
     /**
      * Quest constructor.
@@ -32,7 +33,7 @@ public abstract class AbstractQuest extends PlayerProgressor implements IQuest {
      * @param amountRequired required amount of the item.
      * @param reward         reward of the quest.
      */
-    protected AbstractQuest(int questIndex, String questName, String categoryName, List<String> questDesc, String questType, ItemStack menuItem, ItemStack achievedItem, int amountRequired, Reward reward, List<String> requiredWorlds, boolean isUsingPlaceholders) {
+    protected AbstractQuest(int questIndex, String questName, String categoryName, List<String> questDesc, String questType, ItemStack menuItem, ItemStack achievedItem, int amountRequired, Reward reward, List<String> requiredWorlds, boolean isUsingPlaceholders, String resetService) {
         this.questIndex = questIndex;
         this.questName = questName;
         this.categoryName = categoryName;
@@ -44,6 +45,7 @@ public abstract class AbstractQuest extends PlayerProgressor implements IQuest {
         this.reward = reward;
         this.requiredWorlds = requiredWorlds;
         this.isUsingPlaceholders = isUsingPlaceholders;
+        this.resetService = resetService;
     }
 
     /**
@@ -63,6 +65,7 @@ public abstract class AbstractQuest extends PlayerProgressor implements IQuest {
         this.reward = basicQuest.getReward();
         this.requiredWorlds = basicQuest.getRequiredWorlds();
         this.isUsingPlaceholders = basicQuest.isUsingPlaceholders();
+        this.resetService = basicQuest.getResetService();
     }
 
     /**
@@ -162,5 +165,14 @@ public abstract class AbstractQuest extends PlayerProgressor implements IQuest {
      */
     public boolean isUsingPlaceholders() {
         return this.isUsingPlaceholders;
+    }
+
+    /**
+     * Get the name of the reset service attached to this quest
+     *
+     * @return quest reset service
+     */
+    public String getResetService() {
+        return this.resetService;
     }
 }

@@ -111,6 +111,9 @@ dependencies {
 
     /* Mojang auth API for heads */
     compileOnly 'com.mojang:authlib:1.5.21'
+
+    /* cron */
+    compileOnly 'it.sauronsoftware.cron4j:cron4j:2.2.5'
 }
 
 def targetJavaVersion = 16

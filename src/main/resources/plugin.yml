@@ -10,6 +10,7 @@ softdepend: [Vault, TokenManager, Citizens, PlaceholderAPI, PlayerPoints, Mythic
 libraries:
   - com.zaxxer:HikariCP:5.0.1
   - com.h2database:h2:2.1.214
+  - it.sauronsoftware.cron4j:cron4j:2.2.5
 commands:
   dquests:
     description: default player command
